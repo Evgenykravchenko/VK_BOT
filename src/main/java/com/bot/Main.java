@@ -15,5 +15,14 @@ public class Main {
                         .text("Ведутся работы.")
                         .send()
         );
+
+        group.onPhotoMessage(message ->
+                new Message()
+                        .from(group)
+                        .to(message.authorId())
+                        .text("Работы же говорю ведутся")
+                        .photo("src/main/resources/pictures/notWork.png")
+                        .send()
+        );
     }
 }
